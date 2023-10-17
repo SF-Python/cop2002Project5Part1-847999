@@ -131,7 +131,7 @@ class TestGenerateTestCase(unittest.TestCase):
 
         self.assertEqual(numToName(self.portNum, self.portName, self.portNum[index]), self.portName[index])
 
-    ############ Testing Port Numbers ############
+    ############ Testing Port NAMES ############
 
     # Must start test cases with keyword "test_"
     def test_portFTP20(self):
@@ -139,116 +139,116 @@ class TestGenerateTestCase(unittest.TestCase):
 
         index=0
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
         
 
     def test_portFTP21(self):
         """Port 21"""
         index=1
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portSSH22(self):
         """Port 22"""
         index=2
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portTelnet23(self):
         """Port 23"""
         index=3
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portSMTP25(self):
         """Port 25"""
         index=4
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portDNS53(self):
         """Port 53"""
         index=5
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portDHCP67(self):
         """Port 67"""
         index=6
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portDHCP68(self):
         """Port 68"""
         index=7
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portHTTP80(self):
         """Port 80"""
         index=8
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portPOP3_110(self):
         """Port 110"""
         index=9
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portNetBIOS_137(self):
         """Port 137"""
         index=10
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portNetBIOS_139(self):
         """Port 139"""
         index=11
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portIMAP143(self):
         """Port 143"""
         index=12
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portSNMP_161(self):
         """Port 161"""
         index=13
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portSNMP_162(self):
         """Port 162"""
         index=14
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portLDAP389(self):
         """Port 389"""
         index=15
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portHTTPS443(self):
         """Port 443"""
         index=16
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portSMB445(self):
         """Port 445"""
         index=17
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
     def test_portRDP3389(self):
         """Port 3389"""
         index=18
 
-        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portName[index])
+        self.assertEqual(nameToNum(self.portNum, self.portName, self.portName[index]), self.portNum[index])
  
 
 if __name__ == '__main__':
