@@ -8,7 +8,7 @@ def numToName(portNumArray, portNameArray, portNumber):
 
 
 def nameToNum(portNumArray, portNameArray, portName):
-    # Find portName in portNameArray to return the port number in the portNumArray.
+    # Find portName in portNameArray to return the port numbers (as an array) in the portNumArray.
 
 def main():
 
