@@ -1,4 +1,6 @@
 import unittest
+from unittest import mock
+# from unittest import TestCase
 
 #Cannot have spaces in filenames to be imported
 from project5 import *
@@ -384,7 +386,41 @@ class TestGenerateTestCase(unittest.TestCase):
         answer=nameToNum(self.portNum, self.portName, self.portName[index])
 
         self.assertEqual(answer[0], self.portNum[index])
- 
+
+    @mock.patch("project5.input", create=True)  # "project5" is the unit under test
+    def test_getInputValues1(self, mocked_input):
+        """ Check for a value other than correct values and then 1.  """
+        mocked_input.side_effect = ["A", "1", "done"]
+        result = getInput()
+        self.assertEqual(result, "1")
+
+    @mock.patch("project5.input", create=True)  # "project5" is the unit under test
+    def test_getInputValues2(self, mocked_input):
+        """ Check for a value other than correct values and then 3.  """
+        mocked_input.side_effect = ["9", "8", "7", "6", "5", "4", "3", "done"]
+        result = getInput()
+        self.assertEqual(result, "3")
+
+    @mock.patch("project5.input", create=True)  # "project5" is the unit under test
+    def test_getInputValues3(self, mocked_input):
+        """ Check for a value other than correct values and then 2.  """
+        mocked_input.side_effect = ["B", "C", "7", "%", "<", "L", "[", "2", "done"]
+        result = getInput()
+        self.assertEqual(result, "2")
+
+    @mock.patch("project5.input", create=True)  # "project5" is the unit under test
+    def test_getInputValues4(self, mocked_input):
+        """ Check for a value other than correct values and then m.  """
+        mocked_input.side_effect = ["B", "C", "7", "%", "<", "L", "[", "m", "done"]
+        result = getInput()
+        self.assertEqual(result, "m")
+
+    @mock.patch("project5.input", create=True)  # "project5" is the unit under test
+    def test_getInputValues5(self, mocked_input):
+        """ Check for a value other than correct values and then m.  """
+        mocked_input.side_effect = ["B", "C", "7", "%", "<", "L", "[", "m", "1", "2", "done"]
+        result = getInput()
+        self.assertEqual(result, "m") 
 
 if __name__ == '__main__':
     unittest.main()
