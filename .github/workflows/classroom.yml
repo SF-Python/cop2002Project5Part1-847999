@@ -1,0 +1,69 @@
+name: Autograding Tests
+'on':
+- workflow_dispatch
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Project 5 Functions Test Cases
+      id: project-5-functions-test-cases
+      uses: classroom-resources/autograding-python-grader@v1
+      with:
+        timeout: 5
+        max-score: 43
+        setup-command: ''
+    - name: getInput() - option 1
+      id: getinput-option-1
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: getInput() - option 1
+        setup-command: ''
+        command: python project5.py
+        input: |-
+          A
+          B
+          C
+          D
+          1
+          m
+          3
+        expected-output: "Choice:  Invalid choice.  Enter new choice:  Invalid choice.
+          \ Enter new choice:  Invalid choice.  Enter new choice:  Invalid choice.
+          \ Enter new choice:  \n"
+        comparison-method: contains
+        timeout: 1
+        max-score: 1
+    - name: getInput() - option 2
+      id: getinput-option-2
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: getInput() - option 2
+        setup-command: ''
+        command: python project5.py
+        input: |-
+          9
+          10
+          2
+          m
+          3
+        expected-output: "Choice:  Invalid choice.  Enter new choice:  Invalid choice.
+          \ Enter new choice:  \n"
+        comparison-method: contains
+        timeout: 1
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        PROJECT-5-FUNCTIONS-TEST-CASES_RESULTS: "${{steps.project-5-functions-test-cases.outputs.result}}"
+        GETINPUT-OPTION-1_RESULTS: "${{steps.getinput-option-1.outputs.result}}"
+        GETINPUT-OPTION-2_RESULTS: "${{steps.getinput-option-2.outputs.result}}"
+      with:
+        runners: project-5-functions-test-cases,getinput-option-1,getinput-option-2
