@@ -1,0 +1,15 @@
+def numToName(portNumArray, portNameArray, portNumber):
+    for i in range(len(portNumArray):
+        if portNumArray[i] = portNumber:
+            return portNameArray[i]
+    return "Port number not found"
+
+def nameToNum(portNumArray, portNameArray, portName):
+    result = []
+    for i in range(len(portNameArray):
+        if portNameArray[i] = portName:
+            result.append(portNumArray[i])
+    return result
+
+if __name__ = "__main__":
+    main()
